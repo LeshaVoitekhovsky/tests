@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}
+    {{ test.title }}
+{% endblock %}
+
+{% block content %}
+<a href="{% url 'tests:test_question' pk=test.pk %}">Поехали!</a>
+{% endblock %}

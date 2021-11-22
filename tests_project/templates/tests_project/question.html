@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+    {{ test.title }}
+{% endblock %}
+
+{% block content %}
+<h1 class="lead">{{ question.test }}</h1>
+<p class="lead">{{ question.question }}</p>
+<form method="post">
+    {% csrf_token %}
+<ul class="list-group">
+    {% for answer in form.answers %}
+        <li class="list-group-item">
+            {{ answer }}
+        </li>
+    {% endfor %}
+</ul>
+<input type="submit" value="Подтвердить" class="btn btn-large btn-block btn-success">
+</form>
+
+{% endblock %}

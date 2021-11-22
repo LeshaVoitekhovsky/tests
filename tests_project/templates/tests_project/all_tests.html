@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}
+    All Tests
+{% endblock %}
+
+{% block content %}
+<h1 class="display-4 fst-italic">List of all tests</h1>
+<p class="lead my-3">
+    {% for test in object_list %}
+        <a href="{{ test.get_absolute_url }}"><h2>{{ test.title }}</h2></a>
+    {% empty %}
+    <p>No tests</p>
+    {% endfor %}
+</p>
+{% endblock %}
